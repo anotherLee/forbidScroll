@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            width: 100%;
+        }
+        .parent{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1><h1>123</h1>
+    </div>
+    <button id="btn" style="margin-bottom: 200px">click me</button>
+    <button id="btn2">解决</button>
+    <script>
+        let test = {
+            init: function() {
+                this.body = document.body
+                this.topDistance = 0
+                this.btn = document.querySelector('#btn')
+                this.btn2 = document.querySelector('#btn2')
+                this.bindEvents()
+            },
+            stopScroll: function(isFixed) {
+                if (isFixed) {
+                    this.topDistance = window.scrollY
+                    console.log(this.topDistance)
+                    this.body.style.position = 'fixed'
+                    this.body.style.top = -this.topDistance + 'px'        
+                } else {
+                    this.body.style.position = ''
+                    this.body.style.top = ''
+                    window.scrollTo(0, this.topDistance)
+                }
+            },
+            bindEvents: function() {
+                this.btn.addEventListener('click', () => {
+                    this.stopScroll(true)
+                })
+                this.btn2.addEventListener('click', () => {
+                    this.stopScroll(false)
+                })
+            }
+        }
+        test.init()
+    </script>
+</body>
+</html>
